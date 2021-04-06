@@ -1,0 +1,40 @@
+
+body{
+background-color:black;
+background-image: /* the following is for the gradient / fading of the stars*/
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+background-size: 550px 550px, 350px 350px, 250px 250px; /*i did this to make the stars vary in size*/
+background-position: 0px 0px, 40px 60px, 130px 270px; /*and this is to vary in position*/
+  }
+
+.planet {
+  position: fixed; /*keeping it in one position throughout the piece*/
+  border-radius: 100%; /*following is just styling preference*/
+  height: 400px;
+  width: 400px;
+  top: 30%;
+  left: 38%;
+  background: radial-gradient(circle at 100px 100px, #5cabff, black); /*showing depth, making a sphere*/
+  z-index: 1; /*keeping it in front of the stars*/
+
+  animation: rotate 1s linear infinite; 
+  animation-play-state: paused; /*paused the animation, javascript will later on fire this on scroll*/
+  animation-delay: calc(var(--scroll) * -1s); /*"--scroll" is connected to java*/
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg); /*keyframes, rotating the circle all the way*/
+  }
+}
+
+body {
+  min-height: 500vh; /*setting a limit*/
+}
+
+
+
